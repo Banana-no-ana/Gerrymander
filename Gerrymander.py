@@ -78,6 +78,7 @@ def buildCordDict():
             VAinObject = convertBack(VAs)            
             cDict[coord] = VAinObject
         except (EOFError, ValueError) as e:
+            print item
             print e.message
             pass
     global CordDict
@@ -113,6 +114,7 @@ def testShit():
         
 def buildEDs():
     global LISTOFEDs
+    print "Buildling a list of EDs"
     for VA in LISTOFVAs:
         if VA.EDName not in DICTOFEDs.keys():
             ED = ElectoralDistrict.ElectoralDistrict()
@@ -131,7 +133,7 @@ def main():
     buildCordDict()
     findNeighbours()
     buildEDs()
-    testShit()
+    #testShit()
     
 
 if __name__ == '__main__':
